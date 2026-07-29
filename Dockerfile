@@ -9,11 +9,13 @@ ARG CONDA_ENV_PATH
 # Install SigProfilerExtractor directly from Bioconda into the configured environment path.
 ARG SIGPROFILEREXTRACTOR_VERSION=1.2.1
 ARG PYTHON_VERSION=3.13.5
+ARG PANDAS_VERSION=">=2.0,<3.0"
 
 RUN mamba create -qy -p ${CONDA_ENV_PATH} \
     -c bioconda \
     -c conda-forge \
     python=${PYTHON_VERSION} \
+    "pandas${PANDAS_VERSION}" \
     sigprofilerextractor=${SIGPROFILEREXTRACTOR_VERSION} && \
     mamba clean -afy
 
