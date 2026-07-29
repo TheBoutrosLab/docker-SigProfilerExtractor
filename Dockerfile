@@ -8,7 +8,7 @@ ARG CONDA_ENV_PATH
 
 # Install SigProfilerExtractor directly from Bioconda into the configured environment path.
 ARG SIGPROFILEREXTRACTOR_VERSION=1.2.1
-ARG PYTHON_VERSION=3.13
+ARG PYTHON_VERSION=3.13.5
 
 RUN mamba create -qy -p ${CONDA_ENV_PATH} \
     -c bioconda \

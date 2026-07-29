@@ -16,7 +16,7 @@ This image installs `SigProfilerExtractor` `1.2.1` from Bioconda into a dedicate
 | Tool | Version |
 |------|---------|
 | SigProfilerExtractor | 1.2.1 |
-| Python | 3.13 |
+| Python | 3.13.5 |
 
 ---
 
