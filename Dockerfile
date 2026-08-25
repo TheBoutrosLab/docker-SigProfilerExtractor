@@ -7,7 +7,7 @@ FROM condaforge/miniforge3:${MINIFORGE_VERSION} AS builder
 ARG CONDA_ENV_PATH
 
 # Install SigProfilerExtractor directly from Bioconda into the configured environment path.
-ARG SIGPROFILEREXTRACTOR_VERSION=1.2.1
+ARG SIGPROFILEREXTRACTOR_VERSION=1.4.0
 ARG PYTHON_VERSION=3.13.5
 ARG PANDAS_VERSION=">=2.0,<3.0"
 

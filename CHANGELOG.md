@@ -11,6 +11,14 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ---
 
+## [1.4.0] - 2026-08-25
+
+### Changed
+
+- Update SigProfilerExtractor to `1.4.0`
+
+---
+
 ## [1.2.1] - 2026-07-28
 
 ### Added
