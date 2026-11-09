@@ -6,18 +6,20 @@ FROM condaforge/miniforge3:${MINIFORGE_VERSION} AS builder
 
 ARG CONDA_ENV_PATH
 
-# Install SigProfilerExtractor directly from Bioconda into the configured environment path.
-ARG SIGPROFILEREXTRACTOR_VERSION=1.4.0
+# Create the Python environment with conda, then install SigProfilerExtractor from PyPI.
+ARG SIGPROFILEREXTRACTOR_VERSION=1.5.0
 ARG PYTHON_VERSION=3.13.5
 ARG PANDAS_VERSION=">=2.0,<3.0"
 
 RUN mamba create -qy -p ${CONDA_ENV_PATH} \
-    -c bioconda \
     -c conda-forge \
     python=${PYTHON_VERSION} \
-    "pandas${PANDAS_VERSION}" \
-    sigprofilerextractor=${SIGPROFILEREXTRACTOR_VERSION} && \
+    pip && \
     mamba clean -afy
+
+RUN ${CONDA_ENV_PATH}/bin/pip install --no-cache-dir \
+    "pandas${PANDAS_VERSION}" \
+    SigProfilerExtractor==${SIGPROFILEREXTRACTOR_VERSION}
 
 # Deploy the target tools into a base image
 FROM ubuntu:${UBUNTU_VERSION} AS final
