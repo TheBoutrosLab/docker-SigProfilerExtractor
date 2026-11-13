@@ -7,7 +7,7 @@ FROM condaforge/miniforge3:${MINIFORGE_VERSION} AS builder
 ARG CONDA_ENV_PATH
 
 # Create the Python environment with conda, then install SigProfilerExtractor from PyPI.
-ARG SIGPROFILEREXTRACTOR_VERSION=1.5.0
+ARG SIGPROFILEREXTRACTOR_VERSION=1.6.1
 ARG PYTHON_VERSION=3.13.5
 ARG PANDAS_VERSION=">=2.0,<3.0"
 
